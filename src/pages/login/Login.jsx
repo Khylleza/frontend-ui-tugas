@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 const Login = () => { 
   const [error, setError] = useState(false);
@@ -13,7 +14,7 @@ const Login = () => {
 
   const navigate = useNavigate()
 
-  const {dispatch} = useContext(AuthContext);
+  const {dispatch} = useContext(AuthContext, DarkModeContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -49,7 +50,12 @@ const Login = () => {
         <button type="submit" data-testid="submit" >Login</button>
         {error && <span>Wrong email or password!</span>}
       </form>
+      <div className="bottom">
+        <div className="colorOption" onClick={() => dispatch({ type: "LIGHT" })}></div>
+        <div className="colorOption" onClick={() => dispatch({ type: "DARK" })}></div>
+      </div>
     </div>
+    
   );
 };
 

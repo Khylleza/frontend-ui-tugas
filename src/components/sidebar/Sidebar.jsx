@@ -17,7 +17,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="top">
         <Link to="/">
-          <span className="logo">Store</span>
+          <span className="logo">Khylleza Store</span>
         </Link>
       </div>
       <hr />
