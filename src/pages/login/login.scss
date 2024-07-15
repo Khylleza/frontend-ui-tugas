@@ -31,4 +31,22 @@
         margin-top: 10px;
       }
     }
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-top: 10vh;
+      position: relative;
+      
+
+      .icon {
+        font-size: 20px;
+      }
+
+      .avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+    }
 }

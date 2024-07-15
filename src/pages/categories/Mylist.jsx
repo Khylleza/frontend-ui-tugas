@@ -1,21 +1,20 @@
-import React from "react";
 import "./mylist.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Widget from "../../components/widget/Widget";
 import Mydatatable from "../../components/mydatatable/Mydatatable";
 
-const Mylist = () => {
+const Mylist = ({columns}) => {
   return (
     <div className="mylist">
       <Sidebar />
-      <div className="listContainer">
+      <div className="myListContainer">
         <Navbar />
-        <div className="widgets">
+        {/* <div className="widgets">
           <Widget type="user"/>
           <Widget type="order"/>
-        </div>
-        <Mydatatable/>
+        </div> */}
+        <Mydatatable columns={columns} />
       </div>
     </div>
   );

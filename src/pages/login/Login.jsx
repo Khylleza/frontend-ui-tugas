@@ -1,11 +1,12 @@
 import "./login.scss"; 
-import { useContext,useState } from "react";
-//import { useState } from "react";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { DarkModeContext } from "../../context/darkModeContext";
+import { useState } from "react";
+import { useContext } from "react";
 
 const Login = () => { 
   const [error, setError] = useState(false);
@@ -49,11 +50,14 @@ const Login = () => {
         />
         <button type="submit" data-testid="submit" >Login</button>
         {error && <span>Wrong email or password!</span>}
+        
+        <div className="items">
+          <div className="item">
+            <DarkModeOutlinedIcon className="icon" onClick={() => dispatch({ type: "TOGGLE" })} />
+          </div>
+        </div>
+        
       </form>
-      <div className="bottom">
-        <div className="colorOption" onClick={() => dispatch({ type: "LIGHT" })}></div>
-        <div className="colorOption" onClick={() => dispatch({ type: "DARK" })}></div>
-      </div>
     </div>
     
   );
