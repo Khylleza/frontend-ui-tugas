@@ -37,10 +37,10 @@ const Widget = ({ type }) => {
 
     case "order":
       data = {
-        title: "ORDERS",
+        title: "PRODUCT",
         isMoney: false,
-        link: "View all orders",
-        query: "users",
+        link: "View All Product",
+        query: "products",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -55,10 +55,10 @@ const Widget = ({ type }) => {
 
     case "earning":
       data = {
-        title: "EARNINGS",
+        title: "CATEGORIES",
         isMoney: true,
-        link: "View net earnings",
-        query: "users",
+        link: "View All Categories",
+        query: "categories",
         icon: <MonetizationOnOutlinedIcon className="icon" style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }} />,
       };
       break;
